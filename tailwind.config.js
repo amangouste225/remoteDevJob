@@ -15,7 +15,7 @@ export default {
           "linear-gradient(to top, blue, rgba(255, 255, 255, 0.9)),url('./assets/bg.jpg')",
       },
       colors: {
-        gray: "#808080",
+        gray: "#d8d2d2",
       },
       container: {
         center: true,

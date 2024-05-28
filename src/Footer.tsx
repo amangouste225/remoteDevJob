@@ -1,8 +1,8 @@
 export default function Footer() {
   return (
-    <footer className="container mx-auto flex justify-between items-center text-gray font-light tracking-tight absolute -translate-x-1/2 -translate-y-1/2 left-1/2 bottom-5 font-pt-sans">
+    <footer className="container mx-auto flex justify-between items-center text-black font-light tracking-tight absolute -translate-x-1/2 -translate-y-1/2 left-1/2 bottom-1 font-pt-sans">
       <div>
-        @Copyright by{" "}
+        @Copyright by
         <a href="#" target="_blank" className="underline">
           Amangoua
         </a>

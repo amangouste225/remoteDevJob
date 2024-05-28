@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 
 export default function Header() {
   return (
-    <header className="h-56 w-full bg-header flex-col gap-6 bg-contain bg-repeat flex justify-center items-center">
+    <header className="h-44 w-full bg-header flex-col gap-6 bg-contain bg-repeat flex justify-center items-center">
       <div className="flex items-center gap-4 text-white font-light text-xl leading-none	">
         <a href="/">
           rmt<span className="italic font-bold">Dev</span>Jobs
