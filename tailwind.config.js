@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         body: "Poppins",
+        "pt-sans": "PT Sans",
       },
       screens: {
         lg: "1024px",
@@ -22,8 +23,8 @@ export default {
         screens: {
           sm: "600px",
           md: "728px",
-          lg: "926px",
-          xl: "1000px",
+          lg: "956px",
+          xl: "1296px",
         },
       },
     },
