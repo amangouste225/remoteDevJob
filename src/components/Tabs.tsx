@@ -8,7 +8,7 @@ export default function Tabs() {
         <span className="font-bold px-2">41</span>
         Results
       </h5>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2">
         <span>
           <FaSortAmountDownAlt />
         </span>

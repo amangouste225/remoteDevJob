@@ -1,7 +1,7 @@
-import Breadcrumbs from "./Breadcrumbs";
+import Pagination from "./Pagination";
 import Job from "./Job";
 
-export default function JobSideBar() {
+export default function JobList() {
   return (
     <div className="w-full">
       <Job />
@@ -12,7 +12,7 @@ export default function JobSideBar() {
       <Job />
       <Job />
       <Job />
-      <Breadcrumbs />
+      <Pagination />
     </div>
   );
 }

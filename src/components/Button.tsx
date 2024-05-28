@@ -9,8 +9,8 @@ export default function Button({ children, type }: ButtonProps) {
       className={`uppercase font-semibold ${
         type === "relevant" && "bg-red-800 text-white"
       } ${
-        type === "recent" && "bg-slate-200 text-black"
-      }  py-1 px-3 text-[12px] rounded-sm`}
+        type === "recent" && "bg-gray text-black"
+      }  py-1 px-3 text-[12px] rounded-md`}
     >
       {children}
     </button>

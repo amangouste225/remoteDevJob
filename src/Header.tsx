@@ -14,7 +14,7 @@ export default function Header() {
         </a>
       </div>
       <form className="relative w-[500px] h-12 rounded-sm bg-white shadow-2xl">
-        <button className="h-full px-4">
+        <button type="submit" className="h-full px-4">
           <FaSearch />
         </button>
         <input
