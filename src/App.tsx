@@ -1,7 +1,13 @@
+import Container from "./Container";
+import Footer from "./Footer";
+import Header from "./Header";
+
 function App() {
   return (
     <>
-      <h2 className="font-bold text-3xl">Hello React</h2>
+      <Header />
+      <Container className="max-w-screen-lg border mx-auto bg-blue-400" />
+      <Footer />
     </>
   );
 }
