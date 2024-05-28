@@ -1,18 +1,19 @@
-import Pagination from "./Pagination";
+import { JobItem } from "../lib/types";
 import Job from "./Job";
+import { Fragment } from "react/jsx-runtime";
 
-export default function JobList() {
+type JobListItem = {
+  jobList: JobItem[];
+};
+
+export default function JobList({ jobList }: JobListItem) {
   return (
     <div className="w-full">
-      <Job />
-      <Job />
-      <Job />
-      <Job />
-      <Job />
-      <Job />
-      <Job />
-      <Job />
-      <Pagination />
+      {jobList.map((list) => (
+        <Fragment key={list.id}>
+          <Job list={list} />
+        </Fragment>
+      ))}
     </div>
   );
 }
