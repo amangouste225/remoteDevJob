@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import { JobItem } from "../lib/types";
 
 export function useJobItems(searchText: string) {
-  const [jobList, setJobList] = useState([]);
+  const [jobList, setJobList] = useState<JobItem[]>([]);
   const [loading, setLoading] = useState(false);
-
+  const jobSlice = jobList.slice(0, 7);
   useEffect(() => {
     const fetchData = async () => {
       if (!searchText) return;
@@ -13,7 +14,6 @@ export function useJobItems(searchText: string) {
           `https://bytegrad.com/course-assets/projects/rmtdev/api/data?search='${searchText}'`
         );
         const data = await response.json();
-        console.log(data.jobItems, searchText);
         setLoading(false);
         setJobList(data.jobItems);
       } catch (error) {
@@ -24,5 +24,5 @@ export function useJobItems(searchText: string) {
     fetchData();
   }, [searchText]);
 
-  return { jobList, loading };
+  return [jobSlice, loading] as const;
 }
