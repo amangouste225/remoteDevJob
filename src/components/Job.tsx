@@ -1,5 +1,5 @@
-import { FaBookmark } from "react-icons/fa6";
 import { JobItem } from "../lib/types";
+import BookMark from "./BookMark";
 
 type JobListProps = {
   list: JobItem;
@@ -19,7 +19,7 @@ export default function Job({ list }: JobListProps) {
           </div>
         </div>
         <p>
-          <FaBookmark className=" group-hover:text-blue-600" />
+          <BookMark />
           <span className="text-sm">{list.daysAgo}d</span>
         </p>
       </a>

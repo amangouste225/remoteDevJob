@@ -13,6 +13,7 @@ export default {
       backgroundImage: {
         header:
           "linear-gradient(to top, blue, rgba(255, 255, 255, 0.9)),url('./assets/bg.jpg')",
+        jobDescription: 'url("./patrick.jpg")',
       },
       colors: {
         gray: "#d8d2d2",

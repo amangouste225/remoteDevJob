@@ -8,12 +8,12 @@ type JobListItem = {
 
 export default function JobList({ jobList }: JobListItem) {
   return (
-    <div className="w-full">
+    <ul className="w-full">
       {jobList.map((list) => (
         <Fragment key={list.id}>
           <Job list={list} />
         </Fragment>
       ))}
-    </div>
+    </ul>
   );
 }
