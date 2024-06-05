@@ -88,18 +88,18 @@ export default function JobDescription({
             </div>
             <div className="col-span-2 flex gap-10 flex-col">
               <ul className="flex gap-1 flex-wrap">
-                {jobItem.qualifications.map((item) => (
+                {jobItem.qualifications.map((item, index) => (
                   <li
                     className="bg-slate-200 px-2 text-md py-1 rounded-md"
-                    key={item}
+                    key={index}
                   >
                     {item}
                   </li>
                 ))}
               </ul>
               <ul className="grid  gap-5 grid-cols-2">
-                {jobItem.reviews.map((item) => (
-                  <li className="text-sm rounded-md italic" key={item}>
+                {jobItem.reviews.map((item, index) => (
+                  <li className="text-sm rounded-md italic" key={index}>
                     {item}
                   </li>
                 ))}

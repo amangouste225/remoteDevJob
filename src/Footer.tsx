@@ -1,10 +1,4 @@
-import { JobItemsExpanded } from "./lib/types";
-
-type Props = {
-  jobItem: JobItemsExpanded[];
-};
-
-export default function Footer({ jobItem }: Props) {
+export default function Footer() {
   return (
     <footer className="container mx-auto flex justify-between items-center text-black font-light tracking-tight absolute -translate-x-1/2 -translate-y-1/2 left-1/2 bottom-5 font-pt-sans">
       <div>
@@ -15,8 +9,7 @@ export default function Footer({ jobItem }: Props) {
       </div>
       <div>
         <h6>
-          <strong className="font-bold">{jobItem.length}</strong> total jobs
-          available
+          <strong className="font-bold">2333</strong> total jobs available
         </h6>
       </div>
     </footer>

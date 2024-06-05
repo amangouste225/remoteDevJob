@@ -3,14 +3,14 @@ import Container from "./Container";
 // import Footer from "./Footer";
 import Header from "./Header";
 import { useActiveId, useJobContent, useJobItems } from "./hooks/hooks";
-// import Footer from "./Footer";
+import Footer from "./Footer";
+import { useDebounce } from "use-debounce";
 
 function App() {
   const [searchText, setSearchText] = useState("");
-  const [JobItem, loading] = useJobItems(searchText);
-
+  const [debounceText] = useDebounce(searchText, 250);
+  const [JobItem, loading, JobTotal] = useJobItems(debounceText);
   const id = useActiveId();
-
   const [jobItems, isLoading] = useJobContent(id);
 
   return (
@@ -21,7 +21,9 @@ function App() {
         loading={loading}
         jobList={JobItem}
         jobItems={jobItems}
+        JobTotal={JobTotal}
       />
+      <Footer />
     </>
   );
 }
