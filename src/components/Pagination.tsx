@@ -1,14 +1,38 @@
-import { IoMdArrowRoundForward } from "react-icons/io";
+import { FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa6";
 
-export default function Pagination() {
+import PaginationButton from "./PaginationButton";
+
+type Props = {
+  onClick: (direction: "next" | "previous") => void;
+  previousPage: number;
+  nextPage: number;
+  currentPage: number;
+};
+
+export default function Pagination({
+  onClick,
+  currentPage,
+  previousPage,
+  nextPage,
+}: Props) {
   return (
     <div className="relative h-12">
-      <button className="rounded-full bg-gray py-1 text-[12px] px-2 m-3 absolute right-2">
-        Page 1
-        <span className="inline-block ml-1 pt-1">
-          <IoMdArrowRoundForward />
-        </span>
-      </button>
+      {currentPage > 1 && (
+        <PaginationButton
+          className="left-2"
+          icon=<FaArrowLeft />
+          type={previousPage}
+          onClick={() => onClick("previous")}
+        />
+      )}
+
+      <PaginationButton
+        className="right-2"
+        icon=<FaArrowRight />
+        type={nextPage}
+        onClick={() => onClick("next")}
+      />
     </div>
   );
 }

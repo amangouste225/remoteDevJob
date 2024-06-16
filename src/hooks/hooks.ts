@@ -21,11 +21,10 @@ export function useActiveId() {
 }
 
 export function useJobItems(searchText: string) {
-  const [jobList, setJobList] = useState<JobItem[]>([]);
+  const [jobs, setJobs] = useState<JobItem[]>([]);
   const [loading, setLoading] = useState(false);
   // const [error, setError] = useState(false);
-  const jobSlice = jobList.slice(0, 7);
-  const JobTotal = jobList.length;
+  const JobTotal = jobs?.length || 0;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,13 +40,13 @@ export function useJobItems(searchText: string) {
       }
       const data = await response.json();
       setLoading(false);
-      setJobList(data.jobItems);
+      setJobs(data.jobItems);
     };
 
     fetchData();
   }, [searchText]);
 
-  return [jobSlice, loading, JobTotal] as const;
+  return [jobs, loading, JobTotal] as const;
 }
 
 export function useJobContent(id: number | null) {
