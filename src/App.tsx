@@ -5,6 +5,7 @@ import Header from "./Header";
 import { useActiveId, useJobContent, useJobItems } from "./hooks/hooks";
 import Footer from "./Footer";
 import { useDebounce } from "use-debounce";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const [searchText, setSearchText] = useState("");
@@ -24,6 +25,7 @@ function App() {
         JobTotal={JobTotal}
       />
       <Footer />
+      <Toaster position="top-right" />
     </>
   );
 }
