@@ -19,10 +19,12 @@ function App() {
   const [debounceText] = useDebounce(searchText, 250);
   const [jobs, loading, JobTotal] = useJobItems(debounceText);
   const id = useActiveId();
+
   const [jobItems, isLoading] = useJobContent(id);
-  const jobSlice = jobs?.slice(0, 7) || [];
   const [currentPage, setCurrentPage] = useState(1);
-  console.log(currentPage);
+  const jobSlice = jobs?.slice(currentPage * 7 - 7, currentPage * 7) || [];
+  const totalNumberOfPages = JobTotal / 7;
+  console.log(totalNumberOfPages, currentPage);
 
   const handleChange = (direction: "next" | "previous") => {
     switch (direction) {
@@ -62,6 +64,7 @@ function App() {
                     nextPage={currentPage + 1}
                     onClick={handleChange}
                     currentPage={currentPage}
+                    totalNumberOfPages={totalNumberOfPages}
                   />
                 ) : (
                   ""

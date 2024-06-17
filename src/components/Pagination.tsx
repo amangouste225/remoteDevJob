@@ -8,6 +8,7 @@ type Props = {
   previousPage: number;
   nextPage: number;
   currentPage: number;
+  totalNumberOfPages: number;
 };
 
 export default function Pagination({
@@ -15,6 +16,7 @@ export default function Pagination({
   currentPage,
   previousPage,
   nextPage,
+  totalNumberOfPages,
 }: Props) {
   return (
     <div className="relative h-12">
@@ -27,12 +29,14 @@ export default function Pagination({
         />
       )}
 
-      <PaginationButton
-        className="right-2"
-        icon=<FaArrowRight />
-        type={nextPage}
-        onClick={() => onClick("next")}
-      />
+      {totalNumberOfPages > currentPage && (
+        <PaginationButton
+          className="right-2"
+          icon=<FaArrowRight />
+          type={nextPage}
+          onClick={() => onClick("next")}
+        />
+      )}
     </div>
   );
 }

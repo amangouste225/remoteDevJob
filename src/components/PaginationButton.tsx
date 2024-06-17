@@ -1,5 +1,5 @@
 type Props = {
-  onClick: (direction: "next" | "previous") => void;
+  onClick: () => void;
   type: number;
   icon: JSX.Element;
   className: string;
@@ -13,7 +13,10 @@ export default function PaginationButton({
 }: Props) {
   return (
     <button
-      onClick={() => onClick("previous")}
+      onClick={(e) => {
+        onClick();
+        e.currentTarget.blur();
+      }}
       className={`rounded-full bg-gray py-1 text-[12px] px-2 m-3 absolute ${className}`}
     >
       {className === "left-2" ? (
